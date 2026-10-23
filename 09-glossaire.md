@@ -1,0 +1,23 @@
+# 09 - Glossaire
+
+- **AD / Samba AD** : annuaire (comptes, groupes) + authentification. Samba AD = équivalent open source d'Active Directory Domain Services sur Linux.
+- **Kerberos / KDC** : protocole d'authentification par tickets ; le KDC (porté par les DC) délivre les tickets (TGT, tickets de service). `etype` = type de chiffrement (0x17 = RC4, faible).
+- **LDAP** : annuaire interrogeable (389 en clair, 636 en TLS). `bind` = authentification LDAP.
+- **dsdb** : base d'annuaire de Samba ; l'audit dsdb trace les modifications (création, attributs, mots de passe).
+- **SMB / full_audit** : partage de fichiers ; le module full_audit trace les accès fichiers.
+- **DC / FSMO** : contrôleur de domaine ; les rôles FSMO (PDC emulator, RID master...) sont détenus par certains DC (« primaires »).
+- **Réplication (DRS)** : synchronisation entre DC. `DS-Replication-Get-Changes[-All]` = droits exploités par DCSync.
+- **LemonLDAP::NG** : portail SSO web (fédération SAML/OIDC/CAS) devant les applications ; s'appuie sur l'annuaire pour authentifier. Équivalent AD FS.
+- **DHCP** : attribution dynamique d'IP + options (DNS, domaine). Messages : DISCOVER/OFFER/REQUEST/ACK/NAK/DECLINE/RELEASE. Option 12 = hostname. giaddr = relais.
+- **Firepower / FTD / FMC** : IDS/IPS Cisco (moteur Snort). FTD = boîtier sonde ; FMC = console de gestion.
+- **eStreamer** : protocole de streaming d'événements du FMC (TCP 8302, TLS + certificat) ; le SIEM tire les événements du FMC.
+- **sftunnel** : canal chiffré sonde ↔ FMC (TCP 8305).
+- **SPAN / TAP** : copie de trafic pour une sonde passive (SPAN = miroir de port switch ; TAP = dérivation physique).
+- **Inline / passif** : inline = dans le chemin (peut bloquer) ; passif = écoute seule (« would have dropped » = ce qu'il aurait bloqué).
+- **Security Zone** : regroupement logique d'interfaces côté Firepower.
+- **DSM** : Device Support Module, le parseur d'un type de source dans QRadar.
+- **Propriété personnalisée** : champ extrait du payload par regex quand le DSM ne le parse pas.
+- **Reference set** : liste de référence (DC, comptes privilégiés, IOC...) utilisée dans les règles.
+- **SOAR** : orchestration et réponse (playbooks). Ici QRadar SOAR.
+- **MITRE ATT&CK** : référentiel des techniques d'attaque (ex. T1558.003 Kerberoasting).
+- **Attaques AD** : Kerberoasting (cracker des comptes de service via tickets RC4), AS-REP Roasting (comptes sans pré-auth), DCSync (répliquer les hashs), Golden/Silver Ticket (tickets forgés), password spraying (un mot de passe contre N comptes).
