@@ -16,6 +16,7 @@ Contenu **générique** : aucune donnée réelle (IP, compte, hostname, organisa
 9. [08 - Roadmap et suite](08-roadmap-et-suite.md)
 10. [09 - Glossaire](09-glossaire.md)
 11. [10 - Objectifs opérationnels FMC (actions console + structure Excel)](10-objectifs-fmc-operationnel.md)
+12. [11 - Comprendre les signatures IDS (FMC) : guide d'équipe (schémas + tableaux)](11-comprendre-les-signatures-fmc.md)
 
 ## Référentiels de détection
 - [referentiel-alertes.md](referentiel-alertes.md) / [referentiel-alertes.csv](referentiel-alertes.csv) — catalogue unifié (format ID | Alerte | Criticité | Etat | Log source | Champs importants | Commentaire).
